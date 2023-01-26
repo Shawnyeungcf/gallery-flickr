@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
+import PhotoContextProvider from '@/context/PhotoContext'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <PhotoContextProvider>
+      <Component {...pageProps} />
+    </PhotoContextProvider>
+  )
 }
